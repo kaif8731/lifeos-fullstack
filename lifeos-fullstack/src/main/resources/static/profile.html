@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeOS | Profile &amp; Settings</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body data-page="profile">
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="logo" aria-label="LifeOS Home">
+            <span class="logo-icon">L</span>
+            <span>Life<span class="logo-blue">OS</span></span>
+        </a>
+
+        <!-- links are built by script.js (NAV array) -->
+        <nav class="sidebar-nav" id="sidebarNav"></nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile-avatar" id="profileAvatar">U</div>
+            <div class="profile-info">
+                <h4 id="profileName">My Workspace</h4>
+                <p>Personal Workspace</p>
+            </div>
+            <a href="login.html" class="logout" id="logoutLink" title="Log out">↗</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+                <div>
+                    <p class="breadcrumb">Workspace / Profile &amp; Settings</p>
+                    <h2>Profile &amp; Settings</h2>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span id="todayDate" class="today-date"></span>
+            </div>
+        </header>
+
+        <section class="page-head">
+            <p class="welcome-label">ACCOUNT</p>
+            <h1>Profile &amp; Settings</h1>
+            <p class="welcome-text">Update your details, change your password and manage your data.</p>
+        </section>
+
+        <section class="settings-grid">
+
+            <article class="panel">
+                <div class="panel-header"><div><h3>Profile</h3><p>Your name appears in the sidebar and dashboard.</p></div></div>
+                <form id="profileForm" class="module-form">
+                    <label class="field"><span>Full name</span><input type="text" name="name" maxlength="80" required></label>
+                    <label class="field"><span>Email</span><input type="email" name="email" required></label>
+                    <div class="form-actions"><button type="submit" class="add-btn">Save profile</button></div>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="panel-header"><div><h3>Change password</h3><p>Minimum 8 characters.</p></div></div>
+                <form id="passwordForm" class="module-form">
+                    <label class="field"><span>Current password</span><input type="password" name="current" autocomplete="current-password" required></label>
+                    <label class="field"><span>New password</span><input type="password" name="next" minlength="8" autocomplete="new-password" required></label>
+                    <label class="field"><span>Confirm new password</span><input type="password" name="again" minlength="8" autocomplete="new-password" required></label>
+                    <div class="form-actions"><button type="submit" class="add-btn">Change password</button></div>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="panel-header"><div><h3>Your data</h3><p>What is saved in this workspace.</p></div></div>
+                <ul class="data-summary" id="dataSummary"></ul>
+                <div class="form-actions"><button type="button" class="ghost-btn" id="exportBtn">Download backup (JSON)</button></div>
+            </article>
+
+            <article class="panel danger-zone">
+                <div class="panel-header"><div><h3>Danger zone</h3><p>These actions cannot be undone.</p></div></div>
+                <div class="form-actions">
+                    <button type="button" class="ghost-btn danger-btn" id="clearBtn">Clear all my data</button>
+                    <button type="button" class="ghost-btn danger-btn" id="deleteBtn">Delete my account</button>
+                </div>
+            </article>
+
+        </section>
+
+        <footer class="dashboard-footer">
+            <p>© 2026 LifeOS. Your life, organized in one place.</p>
+            <a href="dashboard.html">Back to dashboard</a>
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeOS | Goals</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body data-page="goals">
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="logo" aria-label="LifeOS Home">
+            <span class="logo-icon">L</span>
+            <span>Life<span class="logo-blue">OS</span></span>
+        </a>
+
+        <!-- links are built by script.js (NAV array) -->
+        <nav class="sidebar-nav" id="sidebarNav"></nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile-avatar" id="profileAvatar">U</div>
+            <div class="profile-info">
+                <h4 id="profileName">My Workspace</h4>
+                <p>Personal Workspace</p>
+            </div>
+            <a href="login.html" class="logout" id="logoutLink" title="Log out">↗</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+                <div>
+                    <p class="breadcrumb">Workspace / Goals</p>
+                    <h2>Goals</h2>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span id="todayDate" class="today-date"></span>
+            </div>
+        </header>
+
+        <section class="page-head">
+            <p class="welcome-label">GOALS</p>
+            <h1>Goals</h1>
+            <p class="welcome-text">Set goals, move the slider as you progress, and stay focused.</p>
+        </section>
+
+        <section class="mini-stats" id="stats"></section>
+
+        <section class="module-grid">
+
+            <article class="panel form-panel">
+                <div class="panel-header">
+                    <div>
+                        <h3 id="formTitle">Add</h3>
+                        <p>What do you want to achieve?</p>
+                    </div>
+                </div>
+                <form id="itemForm" class="module-form" autocomplete="off">
+                    <label class="field"><span>Goal</span><input type="text" name="title" placeholder="e.g. Learn Spring Boot" maxlength="120" required></label>
+                    <label class="field"><span>Description</span><textarea name="description" rows="2" maxlength="300" placeholder="Why does it matter? (optional)"></textarea></label>
+                    <label class="field"><span>Target date</span><input type="date" name="target"></label>
+                    <label class="field"><span>Starting progress (%)</span><input type="range" name="progress" min="0" max="100" step="5" value="0"></label>
+                    <label class="field"><span>Project</span><select name="projectId" data-project-select><option value="">No project</option></select></label>
+                    <div class="form-actions">
+                        <button type="submit" class="add-btn" id="submitBtn">Add</button>
+                        <button type="button" class="ghost-btn hidden" id="cancelEdit">Cancel</button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h3 id="listTitle">Your goals</h3>
+                        <p>Drag a slider to update progress.</p>
+                    </div>
+                    <span class="panel-badge" id="countBadge">0</span>
+                </div>
+                <div class="toolbar">
+                    <input id="filterInput" type="search" placeholder="Search goals..." aria-label="Filter list">
+                    <select id="filterSelect" aria-label="Filter"><option value="">All</option><option value="active">In progress</option><option value="done">Achieved</option></select>
+                </div>
+                <div id="itemList" class="item-list"></div>
+            </article>
+
+        </section>
+
+        <footer class="dashboard-footer">
+            <p>© 2026 LifeOS. Your life, organized in one place.</p>
+            <a href="dashboard.html">Back to dashboard</a>
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

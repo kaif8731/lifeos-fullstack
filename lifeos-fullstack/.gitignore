@@ -1,0 +1,7 @@
+target/
+.idea/
+*.iml
+.vscode/
+.env
+# local secrets - NEVER commit
+src/main/resources/application-local.properties

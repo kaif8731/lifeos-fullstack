@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeOS | Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body data-page="dashboard">
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="logo" aria-label="LifeOS Home">
+            <span class="logo-icon">L</span>
+            <span>Life<span class="logo-blue">OS</span></span>
+        </a>
+
+        <!-- links are built by script.js (NAV array) -->
+        <nav class="sidebar-nav" id="sidebarNav">
+            <a href="creators.html" class="nav-link ">Creators</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile-avatar" id="profileAvatar">U</div>
+            <div class="profile-info">
+                <h4 id="profileName">My Workspace</h4>
+                <p>Personal Workspace</p>
+            </div>
+            <a href="login.html" class="logout" id="logoutLink" title="Log out">↗</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle"
+                        aria-label="Toggle menu">☰</button>
+                <div>
+                    <p class="breadcrumb">Workspace / Dashboard</p>
+                    <h2>Dashboard</h2>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span id="todayDate" class="today-date"></span>
+            </div>
+        </header>
+
+        <section class="welcome-section">
+            <div>
+                <p class="welcome-label">YOUR PERSONAL WORKSPACE</p>
+                <h1 id="welcomeTitle">Welcome to LifeOS!</h1>
+                <p class="welcome-text">
+                    Organize your work, manage your time, and track your progress.
+                </p>
+            </div>
+            <a href="#taskForm" class="primary-btn">+ Add a Task</a>
+        </section>
+
+        <!-- Statistics are updated by script.js -->
+        <section class="stats-grid">
+            <article class="stat-card">
+                <div class="stat-icon blue-icon">✓</div>
+                <p class="stat-title">Total Tasks</p>
+                <h2 id="totalTasks">0</h2>
+                <p class="stat-description">Tasks in your list</p>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon green-icon">✔</div>
+                <p class="stat-title">Completed Tasks</p>
+                <h2 id="completedTasks">0</h2>
+                <p class="stat-description">Tasks finished</p>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon purple-icon">◷</div>
+                <p class="stat-title">Upcoming Events</p>
+                <h2 id="eventCount">0</h2>
+                <p class="stat-description">Your saved events</p>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon orange-icon">◎</div>
+                <p class="stat-title">Task Progress</p>
+                <h2 id="progressText">0%</h2>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </article>
+        </section>
+
+        <section class="dashboard-grid">
+
+            <!-- Tasks -->
+            <article class="panel" id="tasks">
+                <div class="panel-header">
+                    <div>
+                        <h3>My Tasks</h3>
+                        <p>Add tasks and mark them complete.</p>
+                    </div>
+                    <span class="panel-badge" id="taskCount">0 tasks</span>
+                </div>
+
+                <form id="taskForm" class="task-form">
+                    <input id="taskInput" type="text"
+                           placeholder="What do you need to do?"
+                           aria-label="New task" required>
+                    <button type="submit" class="add-btn">Add</button>
+                </form>
+
+                <div id="taskList" class="task-list"></div>
+            </article>
+
+            <!-- Events -->
+            <article class="panel" id="schedule">
+                <div class="panel-header">
+                    <div>
+                        <h3>Upcoming Schedule</h3>
+                        <p>Your upcoming events will appear here.</p>
+                    </div>
+                    <span class="calendar-icon">▦</span>
+                </div>
+
+                <div id="eventList" class="empty-state">
+                    No events yet. Your events will appear here when connected.
+                </div>
+            </article>
+
+            <!-- Activity -->
+            <article class="panel" id="activity">
+                <div class="panel-header">
+                    <div>
+                        <h3>Task Progress</h3>
+                        <p>Completion overview for your tasks.</p>
+                    </div>
+                    <span class="activity-label">All tasks</span>
+                </div>
+
+                <div id="activitySummary" class="activity-summary">
+                    Add tasks to start tracking your progress.
+                </div>
+                <div class="large-progress-track">
+                    <div class="large-progress-fill" id="activityFill"></div>
+                </div>
+            </article>
+
+            <!-- Projects -->
+            <article class="panel" id="projects">
+                <div class="panel-header">
+                    <div>
+                        <h3>Connected Projects</h3>
+                        <p>Your projects will be displayed here.</p>
+                    </div>
+                    <span class="project-icon">▣</span>
+                </div>
+
+                <div id="projectList" class="empty-state">
+                    No projects yet. Project management can be connected here.
+                </div>
+            </article>
+
+            <!-- Creators & Design Improvement Hub -->
+            <article class="panel creators-panel" id="creatorsWidget">
+                <div class="panel-header">
+                    <div>
+                        <h3>Project Creators & Design Hub</h3>
+                        <p>Meet Kaif & Razzak · Review design principles or suggest improvements.</p>
+                    </div>
+                    <a href="creators.html" class="panel-badge-link">
+                        Explore Creators Page <span>→</span>
+                    </a>
+                </div>
+
+                <div class="creators-widget-body">
+                    <div class="creators-duo">
+                        <a href="creators.html#kaif" class="creator-chip">
+                            <img src="mohammad-kaif.jpeg" alt="Mohammad Kaif" class="creator-chip-img">
+                            <div class="creator-chip-info">
+                                <strong>Mohammad Kaif</strong>
+                                <span>The Developer · Problem Solver (DBIT)</span>
+                            </div>
+                        </a>
+                        <a href="creators.html#razzak" class="creator-chip">
+                            <img src="abdul-razzak-khan.jpeg" alt="Abdul Razzak Khan" class="creator-chip-img">
+                            <div class="creator-chip-info">
+                                <strong>Abdul Razzak Khan</strong>
+                                <span>The Innovator · Hackathon Winner (DBIT)</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="creators-widget-footer">
+                        <p>💡 Have ideas to enhance LifeOS UI/UX design, themes, or workspace modules?</p>
+                        <a href="creators.html#design-hub" class="creators-feedback-btn">
+                            Suggest Design Improvements →
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <footer class="dashboard-footer">
+            <p>© 2026 LifeOS. Your life, organized in one place.</p>
+            <a href="index.html">Back to home</a>
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

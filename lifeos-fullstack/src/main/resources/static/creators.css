@@ -1,0 +1,744 @@
+/* =====================================================================
+   LifeOS - creators.css (Creators Showcase & Design Collaboration Hub)
+   ===================================================================== */
+
+:root {
+    --cr-ink: #0f172a;
+    --cr-muted: #64748b;
+    --cr-blue: #2563eb;
+    --cr-blue-dark: #1d4ed8;
+    --cr-blue-soft: #eff6ff;
+    --cr-line: #e2e8f0;
+    --cr-paper: #ffffff;
+    --cr-page: #f8fafc;
+}
+
+.creators-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Hero Section */
+.creators-hero {
+    background: linear-gradient(135deg, #ffffff 0%, #edf5ff 100%);
+    border: 1px solid #dbeafe;
+    border-radius: 16px;
+    padding: 36px 32px;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.creators-hero::after {
+    content: "";
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--cr-blue);
+    background: #dbeafe;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+}
+
+.creators-hero h1 {
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -1px;
+    color: var(--cr-ink);
+    margin: 0 0 12px;
+}
+
+.creators-hero h1 span {
+    color: var(--cr-blue);
+}
+
+.hero-lead {
+    max-width: 780px;
+    color: var(--cr-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 24px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.action-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.action-pill-btn.primary {
+    background: var(--cr-blue);
+    color: #ffffff;
+}
+
+.action-pill-btn.primary:hover {
+    background: var(--cr-blue-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.action-pill-btn.secondary {
+    background: #ffffff;
+    color: var(--cr-ink);
+    border: 1px solid var(--cr-line);
+}
+
+.action-pill-btn.secondary:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+/* Profiles Grid */
+.profiles-section {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.section-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    color: var(--cr-blue);
+}
+
+.section-heading {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--cr-ink);
+    margin: 0;
+}
+
+.profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.creator-card {
+    background: var(--cr-paper);
+    border: 1px solid var(--cr-line);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.creator-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(37, 99, 235, 0.09);
+    border-color: #bfdbfe;
+}
+
+.creator-photo-panel {
+    position: relative;
+    height: 310px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f1f5f9;
+}
+
+.kaif-panel {
+    background: #f0ede6;
+}
+
+.razzak-panel {
+    background: #eef2f7;
+}
+
+.creator-portrait {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center 30%;
+    transition: transform 0.3s ease;
+}
+
+.creator-card:hover .creator-portrait {
+    transform: scale(1.03);
+}
+
+.photo-badge {
+    position: absolute;
+    left: 16px;
+    bottom: 14px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+    color: var(--cr-ink);
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+    font-weight: 800;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.creator-card-body {
+    padding: 26px 26px 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.creator-role-label {
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--cr-blue);
+    margin: 0 0 6px;
+}
+
+.creator-name {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--cr-ink);
+    margin: 0 0 6px;
+}
+
+.creator-name span {
+    color: var(--cr-blue);
+}
+
+.creator-education {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cr-muted);
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--cr-line);
+    margin: 0 0 16px;
+}
+
+.creator-bio {
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.75;
+    margin: 0 0 12px;
+}
+
+.creator-qualities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 16px 0 18px;
+}
+
+.creator-qualities span {
+    display: inline-block;
+    border: 1px solid #dbeafe;
+    background: var(--cr-blue-soft);
+    color: #1e40af;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.creator-quote {
+    margin: 16px 0 20px;
+    padding: 13px 16px;
+    border-left: 3px solid var(--cr-blue);
+    background: #f8fafc;
+    color: #334155;
+    font-size: 12.5px;
+    font-style: italic;
+    border-radius: 0 8px 8px 0;
+}
+
+.creator-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding-top: 16px;
+    border-top: 1px solid var(--cr-line);
+    margin-top: auto;
+}
+
+.signature-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.signature-label {
+    font-size: 9px;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: var(--cr-muted);
+}
+
+.signature-image {
+    width: 140px;
+    height: 54px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.approach-badge-box {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.approach-badge-box strong {
+    color: var(--cr-blue);
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--cr-blue);
+    color: #ffffff;
+    padding: 9px 14px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 11.5px;
+    font-weight: 700;
+    transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
+}
+
+.linkedin-btn:hover {
+    background: var(--cr-blue-dark);
+    transform: translateY(-2px);
+}
+
+/* Design Principles Section */
+.design-pillars-section {
+    background: #ffffff;
+    border: 1px solid var(--cr-line);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.pillar-card {
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.pillar-card:hover {
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+}
+
+.pillar-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.pillar-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--cr-ink);
+    margin: 0 0 6px;
+}
+
+.pillar-card p {
+    font-size: 12px;
+    color: var(--cr-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Interactive Design Improvement Hub */
+.design-hub-section {
+    background: #ffffff;
+    border: 1px solid var(--cr-line);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.04);
+}
+
+.design-hub-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--cr-line);
+}
+
+.design-hub-grid {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 28px;
+    align-items: start;
+}
+
+/* Suggestion Form */
+.suggestion-form-card {
+    background: #f8fafc;
+    border: 1px solid var(--cr-line);
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.suggestion-form-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cr-ink);
+    margin: 0 0 4px;
+}
+
+.form-subtitle {
+    font-size: 12px;
+    color: var(--cr-muted);
+    margin: 0 0 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #334155;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--cr-line);
+    border-radius: 8px;
+    font-size: 12.5px;
+    background: #ffffff;
+    color: var(--cr-ink);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px #eff6ff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 85px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.submit-improvement-btn {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    background: var(--cr-blue);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 4px;
+}
+
+.submit-improvement-btn:hover {
+    background: var(--cr-blue-dark);
+    transform: translateY(-1px);
+}
+
+/* Roadmap & Suggestions Board */
+.suggestions-board {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.board-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.filter-pill {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid var(--cr-line);
+    background: #ffffff;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-pill:hover {
+    background: #f1f5f9;
+    color: var(--cr-ink);
+}
+
+.filter-pill.active {
+    background: var(--cr-blue);
+    color: #ffffff;
+    border-color: var(--cr-blue);
+}
+
+.suggestions-count-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--cr-blue);
+    background: var(--cr-blue-soft);
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.suggestions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.suggestion-card {
+    background: #ffffff;
+    border: 1px solid var(--cr-line);
+    border-radius: 10px;
+    padding: 16px 18px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.suggestion-card:hover {
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.suggestion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.suggestion-tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.suggestion-area {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--cr-muted);
+    background: #f1f5f9;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.status-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+.badge-progress {
+    background: #e0f2fe;
+    color: #0284c7;
+}
+
+.badge-planned {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.badge-review {
+    background: #f3e8ff;
+    color: #7e22ce;
+}
+
+.badge-done {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.priority-high {
+    font-size: 10px;
+    font-weight: 700;
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 3px 7px;
+    border-radius: 4px;
+}
+
+.upvote-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border: 1px solid var(--cr-line);
+    background: #ffffff;
+    border-radius: 8px;
+    color: #475569;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.upvote-btn:hover {
+    border-color: var(--cr-blue);
+    color: var(--cr-blue);
+    background: var(--cr-blue-soft);
+}
+
+.upvote-btn.upvoted {
+    background: var(--cr-blue);
+    color: #ffffff;
+    border-color: var(--cr-blue);
+}
+
+.suggestion-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--cr-ink);
+    margin: 0 0 6px;
+}
+
+.suggestion-desc {
+    font-size: 12.5px;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0 0 10px;
+}
+
+.suggestion-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: var(--cr-muted);
+    padding-top: 8px;
+    border-top: 1px dashed #f1f5f9;
+}
+
+.delete-sug-btn {
+    border: none;
+    background: transparent;
+    color: #ef4444;
+    font-size: 11px;
+    cursor: pointer;
+    padding: 2px 4px;
+}
+
+.delete-sug-btn:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .profiles-grid {
+        grid-template-columns: 1fr;
+    }
+    .creator-photo-panel {
+        height: 340px;
+    }
+    .design-hub-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .creators-hero {
+        padding: 24px 20px;
+    }
+    .creator-photo-panel {
+        height: 290px;
+    }
+    .creator-card-body {
+        padding: 20px 18px;
+    }
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    .creator-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .linkedin-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

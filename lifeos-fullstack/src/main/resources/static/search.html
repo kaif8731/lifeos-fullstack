@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeOS | Search</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body data-page="search">
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="logo" aria-label="LifeOS Home">
+            <span class="logo-icon">L</span>
+            <span>Life<span class="logo-blue">OS</span></span>
+        </a>
+
+        <!-- links are built by script.js (NAV array) -->
+        <nav class="sidebar-nav" id="sidebarNav"></nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile-avatar" id="profileAvatar">U</div>
+            <div class="profile-info">
+                <h4 id="profileName">My Workspace</h4>
+                <p>Personal Workspace</p>
+            </div>
+            <a href="login.html" class="logout" id="logoutLink" title="Log out">↗</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+                <div>
+                    <p class="breadcrumb">Workspace / Search</p>
+                    <h2>Search</h2>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span id="todayDate" class="today-date"></span>
+            </div>
+        </header>
+
+        <section class="page-head">
+            <p class="welcome-label">SEARCH</p>
+            <h1>Search</h1>
+            <p class="welcome-text">Find anything across tasks, events, notes, expenses, goals, habits, documents, projects and hints.</p>
+        </section>
+
+        <section class="panel">
+            <input id="globalSearch" class="big-search" type="search" placeholder="Search everything..." aria-label="Search everything" autocomplete="off">
+            <div id="searchResults" class="search-results"></div>
+        </section>
+
+        <footer class="dashboard-footer">
+            <p>© 2026 LifeOS. Your life, organized in one place.</p>
+            <a href="dashboard.html">Back to dashboard</a>
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

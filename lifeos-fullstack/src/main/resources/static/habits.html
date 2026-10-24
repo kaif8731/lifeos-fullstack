@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeOS | Habits</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="pages.css">
+</head>
+<body data-page="habits">
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="logo" aria-label="LifeOS Home">
+            <span class="logo-icon">L</span>
+            <span>Life<span class="logo-blue">OS</span></span>
+        </a>
+
+        <!-- links are built by script.js (NAV array) -->
+        <nav class="sidebar-nav" id="sidebarNav"></nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile-avatar" id="profileAvatar">U</div>
+            <div class="profile-info">
+                <h4 id="profileName">My Workspace</h4>
+                <p>Personal Workspace</p>
+            </div>
+            <a href="login.html" class="logout" id="logoutLink" title="Log out">↗</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+                <div>
+                    <p class="breadcrumb">Workspace / Habits</p>
+                    <h2>Habits</h2>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <span id="todayDate" class="today-date"></span>
+            </div>
+        </header>
+
+        <section class="page-head">
+            <p class="welcome-label">HABIT TRACKING</p>
+            <h1>Habits</h1>
+            <p class="welcome-text">Tap the last 7 days to check habits off and build streaks.</p>
+        </section>
+
+        <section class="mini-stats" id="stats"></section>
+
+        <section class="module-grid">
+
+            <article class="panel form-panel">
+                <div class="panel-header">
+                    <div>
+                        <h3 id="formTitle">Add</h3>
+                        <p>Start with something small and daily.</p>
+                    </div>
+                </div>
+                <form id="itemForm" class="module-form" autocomplete="off">
+                    <label class="field"><span>Habit</span><input type="text" name="name" placeholder="e.g. Read 20 minutes" maxlength="120" required></label>
+                    <label class="field"><span>Why / target</span><input type="text" name="goal" placeholder="e.g. Every morning (optional)" maxlength="120" ></label>
+                    <div class="form-actions">
+                        <button type="submit" class="add-btn" id="submitBtn">Add</button>
+                        <button type="button" class="ghost-btn hidden" id="cancelEdit">Cancel</button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h3 id="listTitle">Your habits</h3>
+                        <p>Filled circle = done that day.</p>
+                    </div>
+                    <span class="panel-badge" id="countBadge">0</span>
+                </div>
+                <div class="toolbar">
+                    <input id="filterInput" type="search" placeholder="Search habits..." aria-label="Filter list">
+                </div>
+                <div id="itemList" class="item-list"></div>
+            </article>
+
+        </section>
+
+        <footer class="dashboard-footer">
+            <p>© 2026 LifeOS. Your life, organized in one place.</p>
+            <a href="dashboard.html">Back to dashboard</a>
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+LIFEOS - START HERE (Windows)
+=============================
+The website does NOT work by double-clicking the .html files.
+It needs the Spring Boot app running, and you open it at  http://localhost:8080
+
+ONE-TIME SETUP
+ 1. Install JDK 17 or newer      https://adoptium.net          (check: open Command Prompt, type  java -version)
+ 2. Install Maven                https://maven.apache.org      (check: type  mvn -v)
+ 3. MySQL Database:
+    Connected to your Aiven Cloud MySQL instance (defaultdb).
+    Your connection settings are in src\main\resources\application-local.properties
+    and src\main\resources\application.properties.
+
+EVERY TIME
+ 1. Double-click  run-local.bat  and WAIT (first time it downloads libraries: 2-5 minutes).
+ 2. Wait for the line:   Started LifeosApplication
+    KEEP THAT WINDOW OPEN.
+ 3. In your browser open:   http://localhost:8080/api/health
+       {"status":"ok","database":"connected"}   -> everything is working, go to step 4
+       an error about MySQL                     -> start MySQL / fix the password in application-local.properties
+       page does not load                       -> the app is not running, read the red text in the black window
+ 4. Open  http://localhost:8080  -> Get started -> register -> use the site.
+
+CHECK YOUR DATA IS IN MYSQL (MySQL Workbench)
+    USE lifeos;
+    SELECT id, name, email FROM users;
+    SELECT * FROM tasks;
+
+IF IT STOPS WITH AN ERROR
+ - "old users table"         -> in MySQL run   DROP DATABASE lifeos;   then start again.
+ - "Access denied for user"  -> wrong password in application-local.properties.
+ - "Port 8080 was already in use" -> close the other program, or set environment variable PORT=9090.
+ - Send the LAST 30 LINES of the black window to get help.

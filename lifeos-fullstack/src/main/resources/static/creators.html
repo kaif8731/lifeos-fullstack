@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet Mohammad Kaif and Abdul Razzak Khan, Computer Science students at Don Bosco Institute of Technology behind LifeOS, and collaborate on project design improvements.">
+    <title>LifeOS | Creators & Design Hub</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="creators.css">
+</head>
+<body data-page="creators">
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+        <a href="index.html" class="logo" aria-label="LifeOS Home">
+            <span class="logo-icon">L</span>
+            <span>Life<span class="logo-blue">OS</span></span>
+        </a>
+
+        <!-- links are built by script.js (NAV array) -->
+        <nav class="sidebar-nav" id="sidebarNav"></nav>
+
+        <div class="sidebar-bottom">
+            <div class="profile-avatar" id="profileAvatar">U</div>
+            <div class="profile-info">
+                <h4 id="profileName">My Workspace</h4>
+                <p>Personal Workspace</p>
+            </div>
+            <a href="login.html" class="logout" id="logoutLink" title="Log out">↗</a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+                <div>
+                    <p class="breadcrumb">Workspace / Creators & Design</p>
+                    <h2>Creators & Design Hub</h2>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <a href="dashboard.html" class="ghost-btn" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+                    ← Back to Dashboard
+                </a>
+                <span id="todayDate" class="today-date"></span>
+            </div>
+        </header>
+
+        <div class="creators-wrapper">
+
+            <!-- Hero Introduction -->
+            <section class="creators-hero">
+                <span class="hero-eyebrow">PROJECT CREATORS & DESIGN COLLABORATION</span>
+                <h1>Ambitious Minds. <span>Bright Futures.</span></h1>
+                <p class="hero-lead">
+                    Two Computer Science students at Don Bosco Institute of Technology with different strengths and a shared passion to innovate, build, and continuously elevate LifeOS design and engineering. Explore our design principles and actively help us improve the project!
+                </p>
+                <div class="hero-actions">
+                    <a href="#creators-profiles" class="action-pill-btn primary">
+                        Meet Kaif & Razzak ↓
+                    </a>
+                    <a href="#design-hub" class="action-pill-btn secondary">
+                        💡 Suggest Design Improvement ↓
+                    </a>
+                    <a href="#design-principles" class="action-pill-btn secondary">
+                        Design Principles
+                    </a>
+                </div>
+            </section>
+
+            <!-- Profiles Section -->
+            <section class="profiles-section" id="creators-profiles">
+                <div class="section-title-wrap">
+                    <span class="section-label">THE BUILDERS</span>
+                    <h3 class="section-heading">Meet the People Behind LifeOS</h3>
+                </div>
+
+                <div class="profiles-grid">
+
+                    <!-- Profile 1: Mohammad Kaif -->
+                    <article class="creator-card" id="kaif">
+                        <div class="creator-photo-panel kaif-panel">
+                            <img class="creator-portrait" src="mohammad-kaif.jpeg" alt="Mohammad Kaif in a light blue and white striped shirt">
+                            <span class="photo-badge">01 / CREATOR PROFILE</span>
+                        </div>
+                        <div class="creator-card-body">
+                            <p class="creator-role-label">THE DEVELOPER · THE PROBLEM SOLVER</p>
+                            <h3 class="creator-name">Mohammad <span>Kaif</span></h3>
+                            <p class="creator-education">Computer Science Student · Don Bosco Institute of Technology</p>
+                            <p class="creator-bio">
+                                Kaif is a motivated and enthusiastic coder who brings curiosity, persistence, and a genuine desire to improve to his work. He enjoys the challenge of turning a difficult problem into a clear solution, and sees every bug, new concept, and project as another chance to become a stronger developer.
+                            </p>
+                            <p class="creator-bio">
+                                What makes Kaif stand out is his willingness to keep learning. With a builder's mindset and an eye on continuous improvement, he has the qualities to grow into a thoughtful engineer—someone who does not just want code to work, but wants to understand why it works and how it can be better.
+                            </p>
+
+                            <div class="creator-qualities" aria-label="Kaif's strengths">
+                                <span>Passionate about coding</span>
+                                <span>Curious learner</span>
+                                <span>Determined problem-solver</span>
+                                <span>Growth mindset</span>
+                            </div>
+
+                            <blockquote class="creator-quote">
+                                “The best developers never stop being students. Every challenge is another opportunity to learn, improve, and build something better.”
+                            </blockquote>
+
+                            <div class="creator-footer">
+                                <div class="signature-container">
+                                    <span class="signature-label">SIGNATURE</span>
+                                    <img src="kaif-signature-transparent.png" alt="Mohammad Kaif's handwritten signature" class="signature-image">
+                                </div>
+                                <a class="linkedin-btn" href="https://www.linkedin.com/in/mohammad-kaif-402a84419" target="_blank" rel="noopener noreferrer">
+                                    View LinkedIn Profile <span>↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Profile 2: Abdul Razzak Khan -->
+                    <article class="creator-card" id="razzak">
+                        <div class="creator-photo-panel razzak-panel">
+                            <img class="creator-portrait" src="abdul-razzak-khan.jpeg" alt="Abdul Razzak Khan in a black jacket">
+                            <span class="photo-badge">02 / CREATOR PROFILE</span>
+                        </div>
+                        <div class="creator-card-body">
+                            <p class="creator-role-label">THE INNOVATOR · THE COMPETITOR</p>
+                            <h3 class="creator-name">Abdul Razzak <span>Khan</span></h3>
+                            <p class="creator-education">Computer Science Student · Don Bosco Institute of Technology</p>
+                            <p class="creator-bio">
+                                Razzak is a driven and creative technology enthusiast, recognised in the brief for winning a national hackathon. That achievement reflects the kind of confidence and initiative needed to take an idea, work through pressure, collaborate with others, and turn a concept into a solution.
+                            </p>
+                            <p class="creator-bio">
+                                His competitive spirit and interest in innovation make him someone who welcomes challenging goals rather than backing away from them. In a field where teamwork, adaptability, and fresh thinking matter, Razzak brings an ambitious attitude and the motivation to keep pushing his skills forward.
+                            </p>
+
+                            <div class="creator-qualities" aria-label="Razzak's strengths">
+                                <span>National hackathon winner</span>
+                                <span>Creative thinking</span>
+                                <span>Teamwork & collaboration</span>
+                                <span>Challenge-driven</span>
+                            </div>
+
+                            <blockquote class="creator-quote">
+                                “Innovation begins when you are brave enough to try, resilient enough to improve, and committed enough to finish.”
+                            </blockquote>
+
+                            <div class="creator-footer">
+                                <div class="approach-badge-box">
+                                    <span class="signature-label">HIS APPROACH</span>
+                                    <strong>IDEAS → ACTION → IMPACT</strong>
+                                </div>
+                                <a class="linkedin-btn" href="https://www.linkedin.com/in/abdul-razzak-khan-877b1342a" target="_blank" rel="noopener noreferrer">
+                                    View LinkedIn Profile <span>↗</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Design Principles -->
+            <section class="design-pillars-section" id="design-principles">
+                <div class="section-title-wrap">
+                    <span class="section-label">DESIGN SYSTEM & ARCHITECTURE</span>
+                    <h3 class="section-heading">How LifeOS is Designed</h3>
+                </div>
+
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <span class="pillar-icon">🎨</span>
+                        <h4>Aesthetic Excellence</h4>
+                        <p>Curated color palettes, modern typography, glassmorphism cards, and sleek micro-animations designed to elevate daily focus.</p>
+                    </div>
+
+                    <div class="pillar-card">
+                        <span class="pillar-icon">⚡</span>
+                        <h4>Zero-Bloat Performance</h4>
+                        <p>Engineered with lightweight Vanilla JavaScript and CSS, delivering instant responsiveness without heavyweight frontend frameworks.</p>
+                    </div>
+
+                    <div class="pillar-card">
+                        <span class="pillar-icon">📱</span>
+                        <h4>Responsive Ergonomics</h4>
+                        <p>Seamless adaptability across desktop monitors, tablets, and mobile smartphones with a touch-friendly collapsible sidebar.</p>
+                    </div>
+
+                    <div class="pillar-card">
+                        <span class="pillar-icon">🧩</span>
+                        <h4>Unified Modular Architecture</h4>
+                        <p>Tasks, calendar events, notes, expenses, goals, and habits connected together in a single intuitive workspace.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Design Improvement Hub -->
+            <section class="design-hub-section" id="design-hub">
+                <div class="design-hub-header">
+                    <div>
+                        <span class="section-label">COMMUNITY COLLABORATION</span>
+                        <h3 class="section-heading">Project Design Improvement Hub</h3>
+                        <p style="color:var(--cr-muted); font-size:13px; margin:4px 0 0;">
+                            Review current design initiatives or propose your own ideas to enhance LifeOS UI, styling, and user experience.
+                        </p>
+                    </div>
+                    <span class="suggestions-count-badge" id="suggestionsCount">4 ideas</span>
+                </div>
+
+                <div class="design-hub-grid">
+
+                    <!-- Form: Propose Design Improvement -->
+                    <div class="suggestion-form-card">
+                        <h3>Propose an Improvement</h3>
+                        <p class="form-subtitle">Share your creative ideas for UI/UX, layouts, or animations.</p>
+
+                        <form id="suggestionForm">
+                            <div class="form-group">
+                                <label for="sugTitle">Improvement Title *</label>
+                                <input id="sugTitle" type="text" placeholder="e.g. Add OLED Dark Mode toggle" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="sugArea">Design Area</label>
+                                    <select id="sugArea">
+                                        <option value="UI/UX & Themes">UI/UX & Themes</option>
+                                        <option value="Layout & Widgets">Layout & Widgets</option>
+                                        <option value="Feature & Visualization">Feature & Visualization</option>
+                                        <option value="Micro-Interactions">Micro-Interactions</option>
+                                        <option value="Performance & Mobile">Performance & Mobile</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sugPriority">Priority</label>
+                                    <select id="sugPriority">
+                                        <option value="Medium">Medium</option>
+                                        <option value="High">High</option>
+                                        <option value="Low">Low</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="sugDesc">Details & Suggestions *</label>
+                                <textarea id="sugDesc" placeholder="Describe how this improvement will enhance the look, feel, or usability of LifeOS..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-improvement-btn">
+                                + Submit Design Improvement
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Board: Roadmap & Community Suggestions -->
+                    <div class="suggestions-board">
+                        <div class="board-toolbar">
+                            <div class="filter-pills">
+                                <button class="filter-pill active" data-area="all">All Ideas</button>
+                                <button class="filter-pill" data-area="UI/UX & Themes">UI/UX & Themes</button>
+                                <button class="filter-pill" data-area="Layout & Widgets">Layout & Widgets</button>
+                                <button class="filter-pill" data-area="Feature & Visualization">Features</button>
+                                <button class="filter-pill" data-area="Micro-Interactions">Micro-Interactions</button>
+                            </div>
+                        </div>
+
+                        <div class="suggestions-list" id="suggestionsList">
+                            <!-- Populated dynamically by script.js initCreators() -->
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="dashboard-footer" style="margin-top: 40px;">
+            <p>© 2026 LifeOS. Crafted by Mohammad Kaif & Abdul Razzak Khan.</p>
+            <div style="display: flex; gap: 16px;">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="index.html">Landing Page</a>
+            </div>
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
